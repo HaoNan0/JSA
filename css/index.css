@@ -1,0 +1,270 @@
+/* Reset và Base Styles - Áp dụng cho toàn bộ trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Đảm bảo padding/border được tính trong kích thước */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6; /* Tăng khả năng đọc */
+    color: #333;
+    background-color: #f8f9fa; /* Màu nền nhẹ nhàng */
+}
+
+/* Container chung - Giới hạn độ rộng và căn giữa */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles - Sử dụng flexbox để căn chỉnh */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Tạo độ sâu */
+    position: sticky; /* Giữ header khi scroll */
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Căn đều các phần tử */
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2563eb; /* Màu xanh chủ đạo */
+    text-decoration: none;
+}
+
+/* Navigation - Flexbox cho menu ngang */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Khoảng cách đều giữa các item */
+}
+
+nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt */
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+/* Auth Buttons - Flexbox để căn chỉnh */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Button System - Tái sử dụng cho nhiều nút */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease; /* Hiệu ứng hover mượt */
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px); /* Hiệu ứng nâng lên */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+
+.btn-outline:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Hero Section - Gradient background và text căn giữa */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9; /* Làm mờ nhẹ để tạo hierarchy */
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Product Grid - CSS Grid cho layout responsive */
+.products {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1f2937;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tự động responsive */
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Product Card - Box shadow và hover effects */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden; /* Ẩn phần thừa của hình ảnh */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Nâng card khi hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    background: #f1f5f9; /* Placeholder cho hình ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #94a3b8;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer - CSS Grid cho layout cột */
+footer {
+    background: #1f2937;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: #f9fafb;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #d1d5db;
+    text-decoration: none;
+    line-height: 2;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+/* Responsive Design - Mobile first approach */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap; /* Cho phép wrap trên mobile */
+        justify-content: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem; /* Giảm size cho mobile */
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column trên mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px; /* Giảm padding cho màn hình nhỏ */
+    }
+    
+    .hero {
+        padding: 4rem 0; /* Giảm padding vertical */
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}

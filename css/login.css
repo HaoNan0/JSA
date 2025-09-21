@@ -1,0 +1,264 @@
+/* Reset và Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient background */
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+/* Auth Container - Trung tâm trang */
+.auth-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px; /* Bo góc mềm mại */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Shadow sâu */
+    width: 100%;
+    max-width: 400px; /* Giới hạn độ rộng */
+    margin: 2rem;
+}
+
+/* Header của form */
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Form Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 1.5rem;
+}
+
+/* Form Group - Container cho label và input */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+/* Input Styles - Focus states và validation */
+.form-input {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #2563eb; /* Blue border khi focus */
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); /* Focus ring */
+}
+
+.form-input:invalid {
+    border-color: #ef4444; /* Red border cho invalid input */
+}
+
+/* Remember Me Section - Flexbox để căn chỉnh */
+.remember-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+/* Custom Checkbox - Thay thế checkbox mặc định */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    display: none; /* Ẩn checkbox mặc định */
+}
+
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked + .checkbox-custom {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.checkbox-group input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '✓'; /* Checkmark */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    cursor: pointer;
+}
+
+/* Forgot Password Link */
+.forgot-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Button Styles */
+.btn {
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+    width: 100%; /* Full width button */
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px); /* Subtle lift effect */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0); /* Reset khi click */
+}
+
+/* Divider - Phân cách giữa form và social login */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1; /* Chiếm hết không gian còn lại */
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.auth-divider span {
+    padding: 0 1rem;
+}
+
+/* Social Login Buttons */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn-social {
+    background: white;
+    color: #374151;
+    border: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.btn-social:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    transform: translateY(-1px);
+}
+
+/* Register Link */
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.auth-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 2rem 1.5rem; /* Giảm padding cho mobile */
+        margin: 1rem;
+        border-radius: 12px;
+    }
+    
+    .auth-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .remember-section {
+        flex-direction: column; /* Stack vertically trên mobile */
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
