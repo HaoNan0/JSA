@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 15 Pro - TechHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/detail.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">TechHub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-detail">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <a href="index.html#products">Products</a> / <span>iPhone 15 Pro</span>
+            </div>
+
+            <div class="product-detail-container">
+                <div class="product-gallery">
+                    <img src="/placeholder.svg?height=400&width=500" alt="iPhone 15 Pro" class="main-image" id="mainImage">
+                    <div class="thumbnail-images">
+                        <img src="/placeholder.svg?height=80&width=100" alt="Front view" class="thumbnail" onclick="changeImage(this.src)">
+                        <img src="/placeholder.svg?height=80&width=100" alt="Back view" class="thumbnail" onclick="changeImage(this.src)">
+                        <img src="/placeholder.svg?height=80&width=100" alt="Side view" class="thumbnail" onclick="changeImage(this.src)">
+                        <img src="/placeholder.svg?height=80&width=100" alt="Camera view" class="thumbnail" onclick="changeImage(this.src)">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1>iPhone 15 Pro</h1>
+                    
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">(4.8 out of 5 - 2,547 reviews)</span>
+                    </div>
+
+                    <div class="product-price">$999.00</div>
+
+                    <p class="product-description">
+                        The iPhone 15 Pro is the most advanced iPhone yet, featuring a stunning titanium design that's both lighter and more durable. 
+                        Powered by the revolutionary A17 Pro chip, it delivers unprecedented performance for gaming, photography, and productivity. 
+                        The Pro camera system captures incredible detail with 48MP Main camera, and the Action button gives you quick access to your favorite features.
+                    </p>
+
+                    <div class="product-specs">
+                        <h3>Technical Specifications</h3>
+                        <div class="spec-item">
+                            <span class="spec-label">Display</span>
+                            <span class="spec-value">6.1" Super Retina XDR</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Processor</span>
+                            <span class="spec-value">A17 Pro chip</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Camera</span>
+                            <span class="spec-value">48MP Main, 12MP Ultra Wide</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Storage</span>
+                            <span class="spec-value">128GB / 256GB / 512GB / 1TB</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Battery</span>
+                            <span class="spec-value">Up to 23 hours video playback</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Material</span>
+                            <span class="spec-value">Titanium with textured matte glass</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Colors</span>
+                            <span class="spec-value">Natural, Blue, White, Black</span>
+                        </div>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <label>Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                            <span class="quantity-value" id="quantity">1</span>
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="wishlist-btn">♡ Wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About TechHub</h4>
+                    <p>Your trusted partner for premium electronics. We bring you the latest technology with exceptional service and competitive prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="login.html">Login</a></p>
+                    <p><a href="register.html">Sign Up</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@techhub.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: 123 Tech Street, Digital City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+
+        let quantity = 1;
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('quantity').textContent = quantity;
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById('quantity').textContent = quantity;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,264 +1,211 @@
-/* Reset và Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient background */
-    min-height: 100vh; /* Full viewport height */
-    display: flex;
-    align-items: center; /* Căn giữa theo chiều dọc */
-    justify-content: center; /* Căn giữa theo chiều ngang */
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Auth Container - Trung tâm trang */
-.auth-container {
-    background: white;
-    padding: 3rem;
-    border-radius: 16px; /* Bo góc mềm mại */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Shadow sâu */
-    width: 100%;
-    max-width: 400px; /* Giới hạn độ rộng */
-    margin: 2rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Header của form */
-.auth-header {
-    text-align: center;
-    margin-bottom: 2rem;
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.auth-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.auth-header p {
-    color: #64748b;
-    font-size: 0.95rem;
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
 }
 
-/* Form Styles */
-.auth-form {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    gap: 1.5rem;
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
 }
 
-/* Form Group - Container cho label và input */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #1e40af;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.login-header p {
+  color: #d1d5db;
+  font-size: 1rem;
+}
+
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
-    font-weight: 600;
-    color: #374151;
-    font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: white;
 }
 
-/* Input Styles - Focus states và validation */
 .form-input {
-    padding: 0.875rem 1rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: #f9fafb;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
 }
 
 .form-input:focus {
-    outline: none;
-    border-color: #2563eb; /* Blue border khi focus */
-    background: white;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); /* Focus ring */
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.form-input:invalid {
-    border-color: #ef4444; /* Red border cho invalid input */
+.login-button {
+  width: 100%;
+  background: #1e40af;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
 }
 
-/* Remember Me Section - Flexbox để căn chỉnh */
-.remember-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5rem 0;
+.login-button:hover {
+  background: #1e3a8a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
 }
 
-/* Custom Checkbox - Thay thế checkbox mặc định */
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.form-links {
+  text-align: center;
+  color: #d1d5db;
 }
 
-.checkbox-group input[type="checkbox"] {
-    display: none; /* Ẩn checkbox mặc định */
+.form-links a {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.checkbox-custom {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #d1d5db;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.form-links a:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
 }
 
-.checkbox-group input[type="checkbox"]:checked + .checkbox-custom {
-    background: #2563eb;
-    border-color: #2563eb;
+.divider {
+  margin: 1.5rem 0;
+  text-align: center;
+  color: #9ca3af;
+  position: relative;
 }
 
-.checkbox-group input[type="checkbox"]:checked + .checkbox-custom::after {
-    content: '✓'; /* Checkmark */
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.checkbox-label {
-    font-size: 0.9rem;
-    color: #64748b;
-    cursor: pointer;
+.divider span {
+  background: linear-gradient(135deg, #000000 0%, #2d2d2d 50%, #4a4a4a 100%);
+  padding: 0 1rem;
+  position: relative;
 }
 
-/* Forgot Password Link */
-.forgot-link {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #9ca3af;
 }
 
-.forgot-link:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    margin: 1rem;
+    padding: 2rem;
+  }
 
-/* Button Styles */
-.btn {
-    padding: 0.875rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-}
-
-.btn-primary {
-    background: #2563eb;
-    color: white;
-    width: 100%; /* Full width button */
-}
-
-.btn-primary:hover {
-    background: #1d4ed8;
-    transform: translateY(-1px); /* Subtle lift effect */
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.btn-primary:active {
-    transform: translateY(0); /* Reset khi click */
-}
-
-/* Divider - Phân cách giữa form và social login */
-.auth-divider {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-    color: #9ca3af;
-    font-size: 0.9rem;
-}
-
-.auth-divider::before,
-.auth-divider::after {
-    content: '';
-    flex: 1; /* Chiếm hết không gian còn lại */
-    height: 1px;
-    background: #e5e7eb;
-}
-
-.auth-divider span {
-    padding: 0 1rem;
-}
-
-/* Social Login Buttons */
-.social-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.btn-social {
-    background: white;
-    color: #374151;
-    border: 2px solid #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    font-weight: 500;
-}
-
-.btn-social:hover {
-    background: #f9fafb;
-    border-color: #d1d5db;
-    transform: translateY(-1px);
-}
-
-/* Register Link */
-.auth-footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e5e7eb;
-    color: #64748b;
-    font-size: 0.9rem;
-}
-
-.auth-footer a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.auth-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-    .auth-container {
-        padding: 2rem 1.5rem; /* Giảm padding cho mobile */
-        margin: 1rem;
-        border-radius: 12px;
-    }
-    
-    .auth-header h1 {
-        font-size: 1.75rem;
-    }
-    
-    .remember-section {
-        flex-direction: column; /* Stack vertically trên mobile */
-        align-items: flex-start;
-        gap: 1rem;
-    }
+  .nav-links {
+    gap: 1rem;
+  }
 }
