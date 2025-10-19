@@ -58,6 +58,12 @@ nav {
   color: #1e40af;
 }
 
+.user-info {
+  color: #1e40af;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 /* Hero Section */
 .hero {
   padding: 4rem 0;

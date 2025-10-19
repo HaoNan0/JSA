@@ -26,7 +26,7 @@
                 <p>Sign in to your TechHub account</p>
             </div>
             
-            <form>
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
@@ -56,31 +56,8 @@
         </div>
     </footer>
 
-<form id="loginForm"> 
-    </form>
 
-<script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        // Ngăn chặn hành vi gửi form mặc định của trình duyệt
-        event.preventDefault();
-
-        // **(Tùy chọn)** Thêm logic đăng nhập của bạn ở đây.
-        // Ví dụ: lấy giá trị, xác thực, gửi AJAX.
-        // console.log("Đăng nhập bị chặn, không chuyển trang.");
-
-        // (Ví dụ) vô hiệu hóa nút sau khi nhấp để tránh nhấp đúp
-        const button = event.target.querySelector('.login-button');
-        button.textContent = 'Signing In...';
-        button.disabled = true;
-
-        // **Sau khi xử lý (ví dụ sau 1 giây), bạn có thể bật lại nút**
-        setTimeout(() => {
-            button.textContent = 'Sign In';
-            button.disabled = false;
-        }, 1000);
-    });
-</script>
-
-<script src="form-handler.js"></script>
+<script src="./assets/auth.js"></script>
+<script src="./assets/form-handler.js"></script>
 </body>
 </html>

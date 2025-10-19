@@ -26,7 +26,7 @@
                 <p>Join TechHub and discover premium electronics</p>
             </div>
 
-            <form class="signup-form">
+            <form class="signup-form" id="registerForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
@@ -87,31 +87,8 @@
         </div>
     </footer>
 
-<form class="signup-form" id="registerForm">
-    </form>
 
-<script>
-    document.getElementById('registerForm').addEventListener('submit', function(event) {
-        // Ngăn chặn hành vi gửi form mặc định của trình duyệt
-        event.preventDefault();
-
-        // **(Tùy chọn)** Thêm logic đăng ký của bạn ở đây.
-        // Ví dụ: lấy giá trị, xác thực, gửi AJAX.
-        // console.log("Đăng ký bị chặn, không chuyển trang.");
-
-        // (Ví dụ) vô hiệu hóa nút sau khi nhấp để tránh nhấp đúp
-        const button = event.target.querySelector('.signup-button');
-        button.textContent = 'Creating Account...';
-        button.disabled = true;
-
-        // **Sau khi xử lý (ví dụ sau 1 giây), bạn có thể bật lại nút**
-        setTimeout(() => {
-            button.textContent = 'Create Account';
-            button.disabled = false;
-        }, 1000);
-    });
-</script>
-
-<script src="form-handler.js"></script> 
+<script src="./assets/auth.js"></script>
+<script src="./assets/form-handler.js"></script> 
 </body>
 </html>
